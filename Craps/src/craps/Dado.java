@@ -1,3 +1,9 @@
+/*
+ * Programacion Interactiva
+ * Author: Juan David Olaya - 2026223
+ * Case 1 : Game Craps
+ * February 19 / 2021
+ */
 //
 package craps;
 //

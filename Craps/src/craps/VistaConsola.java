@@ -1,3 +1,9 @@
+/*
+ * Programacion Interactiva
+ * Author: Juan David Olaya - 2026223
+ * Case 1 : Game Craps
+ * February 19 / 2021
+ */
 package craps;
 
 import java.util.Scanner;
@@ -5,37 +11,42 @@ import java.util.Scanner;
 // TODO: Auto-generated Javadoc
 /**
  * The Class VistaConsola.
+ * Class VistaConsola
  */
 public class VistaConsola {
 	
-	/** The control craps. */
+	/** The control craps.
+	 * Object of type ControlCraps
+	 *  */
 	private ControlCraps controlCraps;
 	
-	/** The pregunta. */
+	/** The pregunta.
+	 * String pregunta is used for get the user's answer
+	 *  */
 	private String pregunta ;
 	
-	/** The entrada. */
+	/** The entrada.
+	 * Object of type Scanner used for read information
+	 *  */
 	private Scanner entrada ;
-	
-	/** The entra. */
-	private Scanner entra ;
 	
 	/**
 	 * Instantiates a new vista consola.
+	 * this public method is the contructor, when someone start the game
 	 */
 	public VistaConsola() {
 		
 		controlCraps = new ControlCraps();
 		entrada = new Scanner(System.in);
-		entra = new Scanner(System.in);
 	}
 	
 	/**
 	 * Play game.
+	 * Function PlayGame where is realize many operations, like ask if the user wants play, gets a message in the cases. 
 	 */
 	public void playGame() {
 		System.out.println("Do you want to roll the dices? write y/n ");
-		pregunta = entra.nextLine();
+		pregunta = entrada.nextLine();
 
 		if(pregunta.equalsIgnoreCase("y")) {
 			 // start to play
@@ -45,13 +56,17 @@ public class VistaConsola {
 																	  controlCraps.getTiro());
 			controlCraps.determinarJuego();
 
+			// Caso switch where realize diferents things
 			switch(controlCraps.getEstado()) {
+				// Victory message 
 				case 1: System.out.println(" !You win! ");
 						break;
+				// Loses message
 				case 2: System.out.println("You lose");
 						break;
 				case 3: System.out.printf(" !You get points = %d , throw again !! \n", 
 															controlCraps.getPunto());
+						// while the user want continue playing, this control function is run.
 						while(controlCraps.getEstado() == 3) {
 							System.out.println("Do you want throw? write y/s");
 							pregunta = entrada.nextLine();
@@ -77,7 +92,9 @@ public class VistaConsola {
 						}
 						break;
 			}
-			
+			/*
+			 * function seguirJuego is run
+			 */
 			seguirJuego();
 		}else {
 			System.out.println("Ok, good bye!" );
@@ -86,6 +103,7 @@ public class VistaConsola {
 	
 	/**
 	 * Seguir juego.
+	 * Function if the user want continue playing.
 	 */
 	private void seguirJuego() {
 		System.out.println("Do you want to play another round? write y/n " );
