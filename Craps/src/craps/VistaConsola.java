@@ -74,8 +74,8 @@ public class VistaConsola {
 							if(pregunta.equals("y")) {
 								controlCraps.calcularTiro();
 								System.out.printf("Dice 1 = %d Dice 2 = %d Threw = %d \n",
-															controlCraps.getCarasDados()[0],
-														    controlCraps.getCarasDados()[0],
+															controlCraps.getCaradado1(),
+														    controlCraps.getCaradado2(),
 														    controlCraps.getTiro());
 								
 								controlCraps.determinarJuego();

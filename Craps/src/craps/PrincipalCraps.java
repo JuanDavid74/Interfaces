@@ -18,7 +18,7 @@ public class PrincipalCraps {
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		
+		// new object for start the game
 		VistaConsola consola = new VistaConsola();
 		consola.playGame();
 	}
