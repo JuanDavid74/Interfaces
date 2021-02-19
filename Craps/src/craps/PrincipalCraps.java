@@ -14,7 +14,7 @@ public class PrincipalCraps {
 
 	/**
 	 * The main method.
-	 *
+	 * Principal function where the game can be started.
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
